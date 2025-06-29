@@ -42,21 +42,21 @@ function drawMonthlyTasks() {
 function updateTaskLists() {
   document.getElementById('weekly-tasks-list').innerHTML = `
     <li>
-      Osoba 1: <b>${assignments.week[0] || '-'}</b>
+      Milenka: <b>${assignments.week[0] || '-'}</b>
       <input type="checkbox" id="week1" onchange="markDone('week',0)" ${isDone('week',0) ? 'checked' : ''}> Wykonane
     </li>
     <li>
-      Osoba 2: <b>${assignments.week[1] || '-'}</b>
+      Mati: <b>${assignments.week[1] || '-'}</b>
       <input type="checkbox" id="week2" onchange="markDone('week',1)" ${isDone('week',1) ? 'checked' : ''}> Wykonane
     </li>
   `;
   document.getElementById('monthly-tasks-list').innerHTML = `
     <li>
-      Osoba 1: <b>${assignments.month[0] || '-'}</b>
+      Milenka: <b>${assignments.month[0] || '-'}</b>
       <input type="checkbox" id="month1" onchange="markDone('month',0)" ${isDone('month',0) ? 'checked' : ''}> Wykonane
     </li>
     <li>
-      Osoba 2: <b>${assignments.month[1] || '-'}</b>
+      Mati: <b>${assignments.month[1] || '-'}</b>
       <input type="checkbox" id="month2" onchange="markDone('month',1)" ${isDone('month',1) ? 'checked' : ''}> Wykonane
     </li>
   `;
