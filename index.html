@@ -22,7 +22,21 @@
 
   <section>
     <h2>Wymiana zadań</h2>
-    <button onclick="swapTasks()">Zamień się zadaniami</button>
+    <div>
+      <label>Osoba 1 oddaje:
+        <select id="person1-gives">
+          <option value="week">Tygodniowe</option>
+          <option value="month">Miesięczne</option>
+        </select>
+      </label>
+      <label>za zadanie osoby 2:
+        <select id="person2-gives">
+          <option value="week">Tygodniowe</option>
+          <option value="month">Miesięczne</option>
+        </select>
+      </label>
+      <button onclick="swapSelectedTasks()">Zamień zadania</button>
+    </div>
     <p id="swap-info"></p>
   </section>
 
