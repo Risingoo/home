@@ -13,9 +13,14 @@ section {
   padding: 20px;
   background: #fff;
   border-radius: 8px;
+  box-shadow: 0 0 8px #eee;
 }
 
 ul {
   list-style: disc;
   margin-left: 20px;
+}
+
+label {
+  margin-right: 10px;
 }
