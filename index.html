@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Losowanie Prac Domowych</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Losowanie Prac Domowych</h1>
+
+  <section>
+    <h2>Zadania tygodniowe</h2>
+    <ul id="weekly-tasks-list"></ul>
+    <button onclick="drawWeeklyTasks()">Wylosuj zadania na tydzień</button>
+  </section>
+
+  <section>
+    <h2>Zadania miesięczne</h2>
+    <ul id="monthly-tasks-list"></ul>
+    <button onclick="drawMonthlyTasks()">Wylosuj zadania na miesiąc</button>
+  </section>
+
+  <section>
+    <h2>Wymiana zadań</h2>
+    <button onclick="swapTasks()">Zamień się zadaniami</button>
+    <p id="swap-info"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
