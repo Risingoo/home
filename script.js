@@ -33,12 +33,12 @@ function drawMonthlyTasks() {
 // Wyświetlanie zadań
 function updateTaskLists() {
   document.getElementById('weekly-tasks-list').innerHTML = `
-    <li>Osoba 1: <b>${assignments.week[0] || '-'}</b></li>
-    <li>Osoba 2: <b>${assignments.week[1] || '-'}</b></li>
+    <li>Milenka: <b>${assignments.week[0] || '-'}</b></li>
+    <li>Mati: <b>${assignments.week[1] || '-'}</b></li>
   `;
   document.getElementById('monthly-tasks-list').innerHTML = `
-    <li>Osoba 1: <b>${assignments.month[0] || '-'}</b></li>
-    <li>Osoba 2: <b>${assignments.month[1] || '-'}</b></li>
+    <li>Milenka: <b>${assignments.month[0] || '-'}</b></li>
+    <li>Mati: <b>${assignments.month[1] || '-'}</b></li>
   `;
 }
 
