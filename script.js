@@ -29,6 +29,8 @@ document.getElementById('mealPlanForm').addEventListener('submit', async (event)
         };
 
         console.log('Fetching data from:', apiUrl);
+        console.log('Headers:', headers);
+        console.log('Data:', data);
 
         const response = await fetch(apiUrl, {
             method: 'POST',
