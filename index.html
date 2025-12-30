@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Losowanie Prac Domowych</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dieta</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Losowanie Prac Domowych</h1>
-
-  <section>
-    <h2>Zadania tygodniowe</h2>
-    <ul id="weekly-tasks-list"></ul>
-    <button onclick="drawWeeklyTasks()">Wylosuj zadania na tydzień</button>
-  </section>
-
-  <section>
-    <h2>Zadania miesięczne</h2>
-    <ul id="monthly-tasks-list"></ul>
-    <button onclick="drawMonthlyTasks()">Wylosuj zadania na miesiąc</button>
-  </section>
-
-  <section>
-    <h2>Wymiana zadań</h2>
-    <div>
-      <label>Osoba 1 oddaje:
-        <select id="person1-gives">
-          <option value="week">Tygodniowe</option>
-          <option value="month">Miesięczne</option>
-        </select>
-      </label>
-      <label>za zadanie osoby 2:
-        <select id="person2-gives">
-          <option value="week">Tygodniowe</option>
-          <option value="month">Miesięczne</option>
-        </select>
-      </label>
-      <button onclick="swapSelectedTasks()">Zamień zadania</button>
+    <div class="container">
+        <h1>Generator Planu Diety</h1>
+        <form id="mealPlanForm">
+            <label for="days">Liczba dni w tygodniu:</label>
+            <input type="number" id="days" name="days" required>
+            <button type="submit">Wygeneruj plan</button>
+        </form>
+        <div id="result"></div>
     </div>
-    <p id="swap-info"></p>
-  </section>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
