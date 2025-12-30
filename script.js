@@ -11,34 +11,37 @@ document.getElementById('mealPlanForm').addEventListener('submit', async (event)
 
     try {
         const apiKey = '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';
-        const prompt = {
-            "prompt": "Generuj plan posiłków na cały tydzień dla 1 osoby, która ma konsumpcję kkaloryczną wynoszącą 2000 kcal. Upewnij się, że plan nie zawiera laktozy i jest zbilansowany. Rozważ różne rodzaje danek, takie jak śniadania, obiady i kolacje.",
-            "days": days,
-            "number_of_people": 1,
-            "calories": 2000,
-            "lactose_free": true
+        const apiUrl = 'https://api.perplexity.ai/chat/completions';
+
+        const headers = {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
         };
 
-        // Używamy właściwego endpointa API Perplexity.io
-        const apiUrl = 'https://api.perplexity.ai/chat/completions';
+        const data = {
+            "model": "sonar-small-online",
+            "messages": [
+                {"role": "system", "content": "Jesteś pomocnym asystentem DevOps."},
+                {"role": "user", "content": "Generuj plan posiłków na cały tydzień dla 1 osoby, która ma konsumpcję kkaloryczną wynoszącą 2000 kcal. Upewnij się, że plan nie zawiera laktozy i jest zbilansowany. Rozważ różne rodzaje danek, takie jak śniadania, obiady i kolacje."}
+            ],
+            "max_tokens": 500,
+            "temperature": 0.7
+        };
 
         console.log('Fetching data from:', apiUrl);
 
         const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${apiKey}`
-            },
-            body: JSON.stringify(prompt)
+            headers: headers,
+            body: JSON.stringify(data)
         });
 
         if (!response.ok) {
             throw new Error(`Błąd: ${response.status} - ${response.statusText}`);
         }
 
-        const data = await response.json();
-        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+        const dataResponse = await response.json();
+        resultDiv.innerHTML = '<pre>' + JSON.stringify(dataResponse, null, 2) + '</pre>';
     } catch (error) {
         console.error('Błąd:', error.message);
         resultDiv.innerHTML = '<p>Wystąpił błąd podczas generowania planu.</p>';
